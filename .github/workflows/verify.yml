@@ -1,0 +1,27 @@
+name: Verify
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.19
+          cache: npm
+      - run: npm ci
+      - run: npm run check:public
+      - run: npm run test:email-scan --workspace=apps/backend
+      - run: npm run test:jobs --workspace=apps/backend
+      - run: npm run test:resume-parser --workspace=apps/backend
+      - run: npm run test:security --workspace=apps/backend
+      - run: npm run build --workspace=apps/frontend
+      - run: npm run validate --workspace=apps/extension
+      - run: npm run test:autofill --workspace=apps/extension

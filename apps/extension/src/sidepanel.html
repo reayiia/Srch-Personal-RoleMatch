@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RoleMatch Autofill</title>
+    <link rel="stylesheet" href="sidepanel.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <span>RoleMatch</span>
+        <h1>Autofill</h1>
+      </header>
+
+      <section class="status-card" id="connection-card">
+        <strong>Connection</strong>
+        <p id="connection-status">Checking local RoleMatch connection...</p>
+      </section>
+
+      <section class="action-grid">
+        <button id="pause" type="button" class="pause-control" aria-pressed="false" data-paused="false">
+          <span class="pause-glyph" aria-hidden="true"></span>
+          <span id="pause-label">Pause extension</span>
+        </button>
+        <button id="open-form" type="button">Open form</button>
+        <button id="scan" type="button">Scan fields</button>
+        <button id="fill" type="button" class="primary">Fill visible fields</button>
+      </section>
+
+      <section class="status-card">
+        <strong>Current tab</strong>
+        <p id="tab-status">Open a supported ATS application tab.</p>
+      </section>
+
+      <section class="status-card">
+        <strong>Settings</strong>
+        <label class="check-row">
+          <input id="completion-prompt" type="checkbox" checked>
+          <span>Show completion confirmation after submit</span>
+        </label>
+        <label class="check-row">
+          <input id="auto-advance" type="checkbox">
+          <span>Advance completed application steps automatically</span>
+        </label>
+        <label class="check-row">
+          <input id="auto-submit" type="checkbox">
+          <span>Submit complete applications automatically</span>
+        </label>
+        <label class="check-row">
+          <input id="continue-login" type="checkbox">
+          <span>Use saved ATS account and continue login</span>
+        </label>
+        <p class="setting-note">Automatic advance and submission stop for verification, login, consent, ambiguous controls, and unresolved required fields.</p>
+      </section>
+
+      <section>
+        <div class="section-title">
+          <strong>Field matches</strong>
+          <span id="field-count">0</span>
+        </div>
+        <ul id="field-list"></ul>
+      </section>
+    </main>
+    <script src="sidepanel.js"></script>
+  </body>
+</html>

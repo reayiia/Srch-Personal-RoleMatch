@@ -1,0 +1,105 @@
+{
+  "manifest_version": 3,
+  "name": "RoleMatch Autofill",
+  "description": "Connect RoleMatch to supported ATS job applications and fill visible fields from your profile.",
+  "version": "0.4.18",
+  "action": {
+    "default_title": "RoleMatch Autofill"
+  },
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "side_panel": {
+    "default_path": "src/sidepanel.html"
+  },
+  "permissions": [
+    "storage",
+    "tabs",
+    "sidePanel",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "http://localhost:5000/*",
+    "http://127.0.0.1:5000/*",
+    "http://localhost:5173/*",
+    "http://127.0.0.1:5173/*",
+    "http://localhost:5174/*",
+    "https://*.greenhouse.io/*",
+    "https://boards.greenhouse.io/*",
+    "https://job-boards.greenhouse.io/*",
+    "https://jobs.lever.co/*",
+    "https://*.lever.co/*",
+    "https://jobs.ashbyhq.com/*",
+    "https://*.ashbyhq.com/*",
+    "https://*.myworkdayjobs.com/*",
+    "https://*.workdayjobs.com/*",
+    "https://*.wd1.myworkdayjobs.com/*",
+    "https://jobs.smartrecruiters.com/*",
+    "https://*.smartrecruiters.com/*",
+    "https://*.recruitee.com/*",
+    "https://*.icims.com/*",
+    "https://*.workable.com/*",
+    "https://*.successfactors.com/*",
+    "https://*.successfactors.eu/*",
+    "https://*.successfactors.cn/*",
+    "https://*.hcm.ondemand.com/*",
+    "https://*.oraclecloud.com/*",
+    "https://*.taleo.net/*",
+    "https://careers.who.int/*",
+    "https://recruiting.ultipro.com/*",
+    "https://recruiting2.ultipro.com/*",
+    "https://signin-us.ultipro.com/*",
+    "https://jobs.dayforcehcm.com/*",
+    "https://*.dayforcehcm.com/CandidatePortal/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://localhost:5173/*",
+        "http://127.0.0.1:5173/*",
+        "http://localhost:5174/*"
+      ],
+      "js": [
+        "src/rolematchBridge.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://*.greenhouse.io/*",
+        "https://boards.greenhouse.io/*",
+        "https://job-boards.greenhouse.io/*",
+        "https://jobs.lever.co/*",
+        "https://*.lever.co/*",
+        "https://jobs.ashbyhq.com/*",
+        "https://*.ashbyhq.com/*",
+        "https://*.myworkdayjobs.com/*",
+        "https://*.workdayjobs.com/*",
+        "https://*.wd1.myworkdayjobs.com/*",
+        "https://jobs.smartrecruiters.com/*",
+        "https://*.smartrecruiters.com/*",
+        "https://*.recruitee.com/*",
+        "https://*.icims.com/*",
+        "https://*.workable.com/*",
+        "https://*.successfactors.com/*",
+        "https://*.successfactors.eu/*",
+        "https://*.successfactors.cn/*",
+        "https://*.hcm.ondemand.com/*",
+        "https://*.oraclecloud.com/*",
+        "https://*.taleo.net/*",
+        "https://careers.who.int/*",
+        "https://recruiting.ultipro.com/*",
+        "https://recruiting2.ultipro.com/*",
+        "https://signin-us.ultipro.com/*",
+        "https://jobs.dayforcehcm.com/*",
+        "https://*.dayforcehcm.com/CandidatePortal/*"
+      ],
+      "js": [
+        "src/atsAutofill.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "rolematch-root",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=20.19"
+  },
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "check:public": "node scripts/check-public-safety.mjs",
+    "setup:env": "npm run setup:env --workspace=apps/backend",
+    "check:env": "npm run check:env --workspace=apps/backend",
+    "dev": "concurrently --kill-others-on-fail --names API,WEB --prefix-colors blue,green \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "npm run dev -w apps/backend",
+    "dev:frontend": "npm run dev -w apps/frontend",
+    "db:generate": "npm run db:generate -w apps/backend",
+    "db:migrate": "npm run db:migrate -w apps/backend"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.0",
+    "@types/bcrypt": "^6.0.0",
+    "@types/jsonwebtoken": "^9.0.10",
+    "concurrently": "^10.0.3",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "googleapis": "^173.0.0",
+    "jsonwebtoken": "^9.0.3"
+  }
+}

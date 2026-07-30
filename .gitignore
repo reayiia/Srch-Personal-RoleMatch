@@ -1,0 +1,64 @@
+# ==========================================
+# Dependencies & Package Managers
+# ==========================================
+node_modules/
+/npm-debug.log*
+/yarn-error.log*
+/pnpm-debug.log*
+
+# ==========================================
+# Local Environment Secrets (DO NOT COMMIT)
+# ==========================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# ==========================================
+# Build & Compilation Outputs
+# ==========================================
+dist/
+build/
+.next/
+out/
+bin/
+obj/
+
+# ==========================================
+# Database & Drizzle Specifics
+# ==========================================
+# NOTE: We COMMIT 'src/db/migrations' so the team stays synced.
+# We ignore Drizzle's local kit introspection snapshots or temp db files if any.
+.drizzle/
+*.db
+*.sqlite
+
+# ==========================================
+# Web Automation & Testing (Playwright)
+# ==========================================
+test-results/
+playwright-report/
+blob-report/
+playwright/.local-browsers/
+
+# ==========================================
+# System, IDEs, and Editor Configurations
+# ==========================================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+bundle_context.py
+
+merge.py
+
+apps/backend/uploads/
+.codex-local-logs/

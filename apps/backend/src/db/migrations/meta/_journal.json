@@ -1,0 +1,55 @@
+{
+  "version": "6",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1780779579633,
+      "tag": "0000_gifted_abomination",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1781052533773,
+      "tag": "0001_large_carmella_unuscione",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1781109270878,
+      "tag": "0002_freezing_stark_industries",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1782759029183,
+      "tag": "0003_lush_maria_hill",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1782773879494,
+      "tag": "0004_gorgeous_quicksilver",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1784123390694,
+      "tag": "0005_cute_legion",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1784133910992,
+      "tag": "0006_gifted_ken_ellis",
+      "breakpoints": true
+    }
+  ]
+}

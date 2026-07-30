@@ -1,0 +1,10 @@
+{
+  "name": "rolematch-extension",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:autofill": "node scripts/autofill-harness.mjs",
+    "validate": "node scripts/validate-extension.mjs"
+  }
+}

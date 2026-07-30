@@ -1,0 +1,42 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "setup:env": "tsx scripts/setup-env.ts",
+    "check:env": "tsx scripts/check-env.ts",
+    "test:email-scan": "tsx scripts/email-scan-harness.ts",
+    "test:jobs": "tsx scripts/job-search-harness.ts",
+    "test:resume-parser": "tsx scripts/resume-parser-harness.ts",
+    "test:security": "tsx scripts/security-harness.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:reset": "tsx src/db/reset.ts"
+  },
+  "dependencies": {
+    "all-the-cities": "^3.1.0",
+    "cors": "^2.8.6",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.45.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.5.2",
+    "helmet": "^8.3.0",
+    "mammoth": "^1.12.0",
+    "multer": "^2.2.0",
+    "pdf-parse": "^1.1.1",
+    "pg": "^8.11.5"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/multer": "^2.1.0",
+    "@types/node": "^20.12.12",
+    "@types/pdf-parse": "^1.1.5",
+    "@types/pg": "^8.11.6",
+    "drizzle-kit": "^0.31.10",
+    "tsx": "^4.11.0",
+    "typescript": "^5.4.5"
+  }
+}
